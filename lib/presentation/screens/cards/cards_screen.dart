@@ -157,30 +157,39 @@ class _CardType4 extends StatelessWidget {
     return Card(
       clipBehavior: Clip.hardEdge,
       elevation: elevation,
-      child: Stack(
-        children: [
-          Image.network(
-            'https://picsum.photos/id/${elevation.toInt()}/600/350',
-            fit: BoxFit.cover,
-            height: 350,
-          ),
-
-          Align(
-            alignment: Alignment.topRight,
-            child: Container(
-              decoration: BoxDecoration(
-                color: Colors.white,
-                borderRadius: BorderRadius.only(
-                  bottomLeft: Radius.circular(20),
+      child: SizedBox(
+        width: 600,
+        height: 350,
+        child: Stack(
+          children: [
+            Image.network(
+              'https://picsum.photos/id/${elevation.toInt()}/600/350',
+              fit: BoxFit.cover,
+              width: 600,
+              height: 350,
+            ),
+            Align(
+              alignment: Alignment.topRight,
+              child: Container(
+                height: 50,
+                width: 50,
+                decoration: BoxDecoration(
+                  color: Colors.white,
+                  borderRadius: BorderRadius.only(
+                    bottomLeft: Radius.circular(20),
+                  ),
+                ),
+                child: Center(
+                  child: IconButton(
+                    padding: EdgeInsets.zero,
+                    onPressed: () {},
+                    icon: Icon(Icons.more_vert_outlined),
+                  ),
                 ),
               ),
-              child: IconButton(
-                onPressed: () {},
-                icon: Icon(Icons.more_vert_outlined),
-              ),
             ),
-          ),
-        ],
+          ],
+        ),
       ),
     );
   }
